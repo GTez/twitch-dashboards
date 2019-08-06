@@ -48,7 +48,7 @@ def get_top_twitch_stream_by_position(position: int, game=default_game) -> str:
 	try:
 		return stream_list[position]
 	except IndexError as e:
-		logging.error(f"Error Opening Index {position}")
+		logging.error("Error Opening Index {p}".format(p=position))
 		if len(stream_list) > 0:
 			return stream_list[-1]
 		else:
