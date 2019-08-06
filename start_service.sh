@@ -1,5 +1,5 @@
 #!/bin/bash
-DIR="/opt/twitch-dashboard" 
+DIR="/opt/gtez/twitch-dashboard" 
 
 if ! [ -d "$DIR/venv" ]; then
 	virtualenv -p python3 $DIR/venv
