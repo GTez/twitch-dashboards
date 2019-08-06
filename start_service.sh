@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 DIR="/opt/gtez/twitch-dashboards" 
 
 if ! [ -d "$DIR/venv" ]; then
