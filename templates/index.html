@@ -13,7 +13,29 @@
 		<meta http-equiv="refresh" content="{{ refresh }}"	
 	</head>
 	<body>
+		<!-- Old Embed 
 		<iframe src="https://player.twitch.tv/?allowfullscreen&channel={{ streamer }}&autoplay=true&muted=true&parent=phx-dash01.hq.phxlabs.net" width="100%" height="100%" frameborder="0" scrolling="no" allow="autoplay; fullscreen" allowfullscreen="" id="InnerFrame">
 		</iframe>
+		-->
+
+		<!-- New Embed -->
+		<div id="twitch-embed"></div>
+
+    		<!-- Load the Twitch embed script -->
+    		<script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    		<!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
+    		<script type="text/javascript">
+      			new Twitch.Embed("twitch-embed", {
+        			width: "100%",
+        			height: "100%",
+				autoplay: true,
+				layout: "video",
+        			channel: "monstercat",
+        			// only needed if your site is also embedded on embed.example.com and othersite.example.com 
+				parent: ["phx-dash01.hq.phxlabs.net", "hq.phxlabs.net", "phxlabs.net"] 
+      			});
+    		</script>
+
 	</body>
 </html>
