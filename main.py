@@ -28,7 +28,7 @@ LOGGER.addHandler(HANDLER)
 
 app = Flask(__name__)
 app.secret_key = 'cookies-are-fun-bang'
-cors = CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 def get_top_twitch_stream_by_position(position: int, game=default_game) -> str:
 	url = "https://api.twitch.tv/kraken/streams/"
