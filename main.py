@@ -5,6 +5,8 @@ import requests
 import json
 import os
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 
 DEBUG = False
 
@@ -26,7 +28,7 @@ LOGGER.addHandler(HANDLER)
 
 app = Flask(__name__)
 app.secret_key = 'cookies-are-fun-bang'
-
+cors = CORS(app)
 
 def get_top_twitch_stream_by_position(position: int, game=default_game) -> str:
 	url = "https://api.twitch.tv/kraken/streams/"
