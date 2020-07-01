@@ -62,7 +62,7 @@ def index():
 	_refresh = request.args.get('refresh', default_browser_refresh_rate_seconds)
 	streamer = get_top_twitch_stream_by_position(idx, game=_game)
 	logging.info(streamer)
-	return jsonify({streamer: streamer, refresh: _refresh, index: idx, game: _game})
+	return jsonify({"streamer": streamer, "refresh": _refresh, "index": idx, "game": _game})
 	# return render_template('index.html', streamer=streamer, refresh=_refresh)
 
 if __name__ == "__main__":
